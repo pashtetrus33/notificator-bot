@@ -4,6 +4,7 @@ FROM maven:3.8.5-openjdk-17-slim AS MAVEN_BUILD
 LABEL maintainer="Pavel Bakanov"
 # copy the pom and src code to the container
 COPY ./ ./
+COPY frontend/ frontend/
 
 # package our application code without tests
 #RUN mvn package -Dmaven.test.skip
